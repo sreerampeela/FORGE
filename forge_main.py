@@ -21,11 +21,6 @@ python forge_main.py \
 """
 
 # Standard library imports
-# from scipy.stats import mannwhitneyu, spearmanr
-# from scipy.cluster.hierarchy import fcluster
-# from matplotlib.colors import LinearSegmentedColormap, Normalize
-# from adjustText import adjust_text
-# import umap
 import os
 import argparse
 import pickle
@@ -35,8 +30,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
-# import matplotlib.pyplot as plt
-# from scipy.cluster.hierarchy import dendrogram
+
 
 # --- Constants ---
 MAX_ITER = 1000
@@ -44,15 +38,6 @@ LEARNING_RATE = 1e-3
 LAMBDA_REG = 0.01
 RANDOM_SEED = 198716
 TRAIN_SPLIT_RATIO = 0.7
-
-# resource limits
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'  # disable GPU on shared compute
-os.environ["OMP_NUM_THREADS"] = "8"
-os.environ["OPENBLAS_NUM_THREADS"] = "8"
-os.environ["MKL_NUM_THREADS"] = "8"
-os.environ["VECLIB_MAXIMUM_THREADS"] = "8"
-os.environ["NUMEXPR_NUM_THREADS"] = "8"
-
 
 def load_and_prepare_data(dep_path, ic50_path, exp_path, target_gene):
     """
