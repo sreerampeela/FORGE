@@ -13,9 +13,19 @@ of promising treatment groups for targeted therapy consideration.
 
 ### Running the pipeline
 
-The full pipeline can be run using 'forge_main.py' script. Please run forge_main.py --help for full help menu.
+The full pipeline can be run using 'forge_main.py' script. 
 
-Arguments:
+##### Quick start
+python forge_main.py \
+    --dependency /path/to/dependency_full_cleaned.csv \
+    --ic50 /path/to/erlotinib_ic50.csv \
+    --expression /path/to/Erlotinib_expression.csv \
+    --base_name "Erlotinib_EGFR" \
+    --target_gene "EGFR"
+    
+Please run forge_main.py --help for full help menu.
+
+##### Arguments
   - Expression data: Gene expression data with samples as rows and genes as columns
   - Dependency: Full/target-specific dependency data
   - Drug IC50: IC50 values for key drugs from CREAMMIST database
