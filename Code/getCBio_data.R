@@ -13,7 +13,8 @@ set_cbioportal_db(db = "public")
 # Load input data
 message("Loading input data...")
 erlotinib_samples <- trimws(readLines("../Data/erlotinib_sample_ids.txt", warn = FALSE))
-genes_of_interest <- trimws(readLines("../Data/key_gene_list.txt", warn = FALSE))
+gene_weights <- read.csv('../Data/L40_gene_weights_final.csv', row.names = 1, header = T)
+genes_of_interest <- rownames(gene_weights)
 message(paste("Loaded", length(erlotinib_samples), "Erlotinib-treated samples."))
 message(paste("Loaded", length(genes_of_interest), "genes of interest."))
 
