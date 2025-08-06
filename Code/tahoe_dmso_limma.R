@@ -43,9 +43,8 @@ levels(pb_metadata$score_cat) <- make.names(levels(pb_metadata$score_cat))
 # --- 4. limma-voom Analysis Pipeline ---
 message("Starting limma-voom pipeline...")
 
-# Create the design matrix. Note: The blocking variable 'cell_line' is NOT included here.
-# It will be handled by duplicateCorrelation.
-design <- model.matrix(~ score_cat + plate_id, data = pb_metadata)
+# Create the design matrix.
+design <- model.matrix(~ score_cat + plate_id + cell_line, data = pb_metadata)
 colnames(design) <- make.names(colnames(design)) # Clean up column names
 
 # Create DGEList, filter low-expressed genes, and normalize
@@ -75,27 +74,11 @@ fit <- eBayes(fit)
 # --- 5. Extract and Save Results ---
 message("Analysis complete. Saving results...")
 
-# 5a. Save the key limma objects for later use
+# 6. Save the key limma objects for later use
 v_path <- file.path(output_dir, "dmso_voom_EList_object.rds")
 fit_path <- file.path(output_dir, "dmso_limma_fit_object.rds")
 saveRDS(v, file = v_path)
 saveRDS(fit, file = fit_path)
 message(paste("Saved voom EList object to:", v_path))
 message(paste("Saved limma fit object to:", fit_path))
-
-# 5b. Get results for the main effect of score_cat
-# The coefficient of interest is 'score_cat.high.score'
-res_main_effect <- topTable(fit, coef = "score_cat.high.score", number = Inf, sort.by = "p")
-
-# Convert row names (genes) to a column and save to CSV
-res_main_effect_df <- as.data.frame(res_main_effect) %>%
-  rownames_to_column(var = "gene")
-
-main_effect_path <- file.path(output_dir, "dmso_limma_results_main_effect_score_cat.csv")
-write.csv(res_main_effect_df, main_effect_path, row.names = FALSE)
-message(paste("Saved main effect results to:", main_effect_path))
-
-print("--- Top genes for AVERAGE score effect (from limma-voom) ---")
-print(head(res_main_effect_df))
-
-message("\nAll done!")
+message("\nDEG analysis done!")
