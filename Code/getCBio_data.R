@@ -4,11 +4,12 @@
 # -------------------------------------------
 
 # Load required libraries
-library(cbioportalR)
+library(cBioPortalData)
 library(dplyr)
 
 # Set cBioPortal database
-set_cbioportal_db(db = "public")
+cbio <- cBioPortal()
+studies <- getStudies(cbio, buildReport = TRUE)
 
 # Load input data
 message("Loading input data...")
