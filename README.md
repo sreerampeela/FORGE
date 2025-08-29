@@ -39,9 +39,10 @@ The following scripts for used for dataset preprocessing/downloading and analysi
 2. getCbioData.R - a script to download gene expression and study ids for selected patients
 3. data_Preprocessing.ipynb - a Jupyter Notebook outlining the data cleaning and integration for
    building the FORGE model
-4. PDX_analysis.ipynb - Jupyter Notebook outlining data cleaning and analysis for PDX data
-5. Tahoe_analysis.ipynb - Jupyter Notebook outlining data cleaning and analysis for Tahoe-100M data
-6. tahoe_dmso_score_DEG.R - the pipeline from raw pseudobulk counts to DEG analysis for DMSO-treated cell lines
+4. PDX_metadata_analysis.ipynb - Jupyter Notebook outlining data cleaning and prelimimary analysis for PDX data
+5. PDX_data_analysis.ipynb - Jupyter Notebook outlining benefit score computations and comparisons
+6. Tahoe_complete_analysis.ipynb - Jupyter Notebook outlining data cleaning and analysis for Tahoe-100M data
+7. tahoe_dmso_score_DEG.R - the pipeline from raw pseudobulk counts to DEG analysis for DMSO-treated cell lines
    in Tahoe-100M dataset 
 
 
