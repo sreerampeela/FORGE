@@ -10,6 +10,11 @@ of promising treatment groups for targeted therapy consideration.
 - Provide BenefitScore to estimate treatment efficacy from basal gene expression profiles.
 - Identify putative influencer genes driving treatment response
 
+#### Dependencies
+1. Python>=3.10
+2. Numpy
+3. Pandas
+4. Scikit-learn
 
 ### Running the pipeline
 
