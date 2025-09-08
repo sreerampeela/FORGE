@@ -26,14 +26,14 @@ python forge_main.py \
 Please run forge_main.py --help for full help menu.
 
 ##### Arguments
-  - Expression data: Gene expression data with samples as rows and genes as columns
-  - Dependency: Full/target-specific dependency data
+  - Expression data: Gene expression data with samples as rows and genes as columns. Currently, the highly correlated genes have to be pre-determined and included in the dataset
+  - Dependency: Full/target-specific dependency data.
   - Drug IC50: IC50 values for key drugs from CREAMMIST database
   - Target gene: Name of the target gene in the dependency dataset
 
 ### Additional Scripts
 
-The following scripts for used for dataset preprocessing/downloading and analysis:
+The following scripts have been used for dataset preprocessing/downloading and analysis as per the manuscript:
 
 1. limma_voom_general.R - an automated R pipeline to compute Voom-transformed data from raw gene counts
 2. getCbioData.R - a script to download gene expression and study ids for selected patients
