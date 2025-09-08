@@ -1,4 +1,3 @@
-''' Use the env with python=3.10.18 and install all dependencies'''
 """
 Joint Matrix Factorization-based method to infer therapy success using baseline gene expression.
 
