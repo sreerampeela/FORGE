@@ -12,9 +12,9 @@ of promising treatment groups for targeted therapy consideration.
 
 #### Dependencies
 1. Python>=3.10
-2. Numpy
-3. Pandas
-4. Scikit-learn
+2. Numpy = 2.2.5
+3. Pandas = 2.2.3
+4. Scikit-learn = 1.6.1
 
 ### Running the pipeline
 
