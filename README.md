@@ -22,16 +22,16 @@ The full pipeline can be run using 'forge_main.py' script.
 
 ##### Quick start
 python forge_main.py \
-    --dependency /path/to/dependency_full_cleaned.csv \
-    --ic50 /path/to/erlotinib_ic50.csv \
-    --expression /path/to/Erlotinib_expression.csv \
+    --dependency ./test_data/egfr_dependency.csv \
+    --ic50 ./test_data/erlotinib_ic50.csv \
+    --expression ./test_data/gene_exp.csv \
     --base_name "Erlotinib_EGFR" \
     --target_gene "EGFR"
     
 Please run forge_main.py --help for full help menu.
 
 ##### Arguments
-  - Expression data: Gene expression data with samples as rows and genes as columns. Currently, the highly correlated genes have to be pre-determined and included in the dataset
+  - Expression data: Gene expression data with samples as rows and genes as columns. The script **doesnot** determine the highly correlated genes.
   - Dependency: Full/target-specific dependency data.
   - Drug IC50: IC50 values for key drugs from CREAMMIST database
   - Target gene: Name of the target gene in the dependency dataset
