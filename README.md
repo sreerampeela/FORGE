@@ -36,18 +36,28 @@ Please run forge_main.py --help for full help menu.
   - Drug IC50: IC50 values for key drugs from CREAMMIST database
   - Target gene: Name of the target gene in the dependency dataset
 
-### Additional Scripts
+### Main Scripts
 
-The following scripts have been used for dataset preprocessing/downloading and analysis as per the manuscript:
+The following scripts have been used for dataset analysis as per the manuscript:
 
-1. limma_voom_general.R - an automated R pipeline to compute Voom-transformed data from raw gene counts
-2. data_Preprocessing.ipynb - a Jupyter Notebook outlining the data cleaning and integration for
+1. data_Preprocessing.ipynb - a Jupyter Notebook outlining the data cleaning and integration for
    building the FORGE model
-3. PDX_metadata_analysis.ipynb - Jupyter Notebook outlining data cleaning and prelimimary analysis for PDX data
-4. PDX_score_analysis.ipynb - Jupyter Notebook outlining benefit score computations and comparisons
-5. Tahoe_score_analysis.ipynb - Jupyter Notebook outlining data cleaning and analysis for Tahoe-100M data
-6. tahoe_dmso_score_DEG.R - the pipeline from raw pseudobulk counts to DEG analysis for DMSO-treated cell lines
-   in Tahoe-100M dataset 
+2. PDX_metadata_analysis.ipynb - Jupyter Notebook outlining data cleaning and prelimimary analysis for PDX data
+3. pdx_data_analysis.ipynb - Jupyter Notebook outlining benefit score computations and comparisons
+4. tahoe_complete_analysis.ipynb - Jupyter Notebook outlining data cleaning and analysis for Tahoe-100M data
+5. tahoe_deg_analysis.ipynb - the pipeline from raw pseudobulk counts to DEG analysis for DMSO-treated cell lines
+   in Tahoe-100M dataset
+6. tahoe_dmso_pseudobulk.ipynb - pseudobulk generation for plate 9 alone for the Tahoe-100M dataset
+
+
+### Supplementary scripts
+
+The following scripts are used in data generation/pre-processing:
+
+1. create_PDX_ExpData.py - script to generate pseudobulk from FPKM values for the PDX dataset
+2. limma_voom_general.R - a customized script to run Limma's voom normalisation
+3. limma_voom_tahoe.R - customized script to run Limma's voom on Tahoe-100M data (can specify drug name)
+4. tahoe_downloader.py - script to automate the downloads for Tahoe-100M plates 7-10 and generate a merged annData file, and plate-specific pseudobulk data.
 
 
 
