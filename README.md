@@ -48,6 +48,9 @@ The following scripts have been used for dataset analysis as per the manuscript:
 5. tahoe_deg_analysis.ipynb - the pipeline from raw pseudobulk counts to DEG analysis for DMSO-treated cell lines
    in Tahoe-100M dataset
 6. tahoe_dmso_pseudobulk.ipynb - pseudobulk generation for plate 9 alone for the Tahoe-100M dataset
+7. depMap_benefitScore_DEG.ipynb - DEG analysis for the DepMap data based on benefit score categories
+8. depMap_keyCluster_deg.ipynb - DEG analysis for the key susceptible clusters in the DepMap dataset
+9. model_building.ipynb - model building steps for the EGFR-Erlotinib and NAMPT-Daporinad pairs with intermittent analysis
 
 
 ### Supplementary scripts
