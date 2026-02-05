@@ -16,9 +16,14 @@ def computeGeneInfluence(W, h):
         h - The latent vector with learnt representations of the outcome variable
     The code initially check for data dimensions and fails if the dimensions mismatch.
     '''
-    pass
+    W = np.array(W)
+    h = np.array(h)
+    weights = W @ h
+    return weights
 
-def computeBenefitScores(exp_mat : np.array, W : np.array, hI : np.array, hD: np.array, keep_raw: bool = False ):
+
+def computeBenefitScores(exp_mat: np.array, W: np.array, hI: np.array, hD: np.array, keep_raw: bool = False,
+                         inf_df_path: str = 'gene_inf_df.csv', score_df_path: str = 'score_df.csv'):
     '''
     Function to compute the benefit scores for a set of samples. This calls the ComputeGeneInfluence function
     for generating gene influence scores, and use sample-specific expression profiles for computing the
@@ -32,4 +37,20 @@ def computeBenefitScores(exp_mat : np.array, W : np.array, hI : np.array, hD: np
         A dataframe with samples as the row indices and scaled benefit scores as the 'benefit_score' column.
     The code initially check for data dimensions and fails if the dimensions mismatch.
     '''
-    pass
+    G = exp_mat.values
+    dep_inf = computeGeneInfluence(W=W, h=hD)
+    ic50_inf = computeGeneInfluence(W=W, h=hI)
+    influence_df = pd.DataFrame(index=exp_mat.columns)
+    influence_df['dep_inf'] = dep_inf
+    influence_df['ic50_inf'] = ic50_inf
+    influence_df['combined_inf'] = dep_inf - ic50_inf
+    influence_df['scaled_combined'] = (influence_df['combined_inf'] - np.mean(
+        influence_df['combined_inf'])) / np.std(influence_df['combined_inf'])
+    influence_df.to_csv(inf_df_path, index=True)
+    benefit_scores = G @ influence_df['scaled_combined']
+    scaled_scores = (benefit_scores - np.min(benefit_scores)) / \
+        (np.max(benefit_scores) - np.min(benefit_scores))
+    benefit_score_df = pd.DataFrame({'raw_score': benefit_scores,
+                                     'scaled_scores': scaled_scores}, index=exp_mat.index)
+    benefit_score_df.to_csv(score_df_path)
+    return benefit_score_df
