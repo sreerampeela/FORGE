@@ -55,7 +55,7 @@ of promising treatment groups for targeted therapy consideration.
 ## Reproducibility
 
 All analyses reported in the manuscript can be reproduced by:
-1. Downloading the datasets from the provided Figshare link
+1. Downloading the datasets from the provided Figshare link and save in a folder './Data'
 2. Instantiating the FORGE model using classes in `forge/src`
 3. Running the appropriate training and evaluation pipelines from the `tests` directory
 4. Generating figures using scripts in `figures_publication`
@@ -74,6 +74,23 @@ This repository is intended for:
 ## Citation
 
 If you use FORGE or any part of this repository in your work, please cite the associated manuscript.
+
+---
+
+### License
+
+This work is licensed under the Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+
+You are free to share — copy and redistribute the material in any medium or format — under the following terms:
+
+Attribution — You must give appropriate credit to the original authors and source.
+
+NonCommercial — You may not use the material for commercial purposes.
+
+NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified content.
+
+For full license details, please see:
+👉 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ---
 
