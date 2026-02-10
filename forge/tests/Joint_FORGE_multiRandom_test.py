@@ -3,8 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 from scipy.stats import pearsonr, spearmanr, rankdata
-from forge_class_instance3 import *
-# from forge_ind_model_combined_optuna import *
+from JointFORGE import *
 from numthreads import set_num_threads
 from pyinstrument import Profiler
 from memory_profiler import memory_usage
