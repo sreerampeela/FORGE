@@ -11,21 +11,18 @@ from JointFORGE import *
 # set max number of threads to 4 for the code here
 set_num_threads(4)
 
-exp_path = "/home/nilabjab/cancer_dependency_project_nilabja/cancer_dependency_project/Approach3_Latent_factor/Fresh_FORGE/Data/Exp.csv"
-dep_path = "/home/nilabjab/cancer_dependency_project_nilabja/cancer_dependency_project/Approach3_Latent_factor/Fresh_FORGE/Data/Dep.csv"
-ic50_path = "/home/nilabjab/cancer_dependency_project_nilabja/cancer_dependency_project/Approach3_Latent_factor/Fresh_FORGE/Data/Creammist_common_ic50.csv"
-drug_target_data = pd.read_csv('/home/sreeramp/cancer_dependency_project/nilabja/Approach3_Latent_factor/Fresh_FORGE/Data/Drug_target_data.csv',
+exp_path = "./Data/Exp.csv"
+dep_path = "./Data/Dep.csv"
+ic50_path = "./Data/Creammist_common_ic50.csv"
+drug_target_data = pd.read_csv('./Data/Drug_target_data.csv',
                                header=0, index_col=0)
 # erlotinib model completed
 key_drugs = ['DAPORINAD', 'IMATINIB', 'MK-2206', 'TIVANTINIB', 'ULIXERTINIB',
              'UPROSERTIB', 'BMS-754807', 'DABRAFENIB']
-optuna_models_path = '/home/sreeramp/cancer_dependency_project/nilabja/Approach3_Latent_factor/git_repo/Models/optuna_models'
-model_out_path = '/home/sreeramp/cancer_dependency_project/nilabja/Approach3_Latent_factor/git_repo/Models/combined_ind_models'
+optuna_models_path = './Models/optuna_models'
+model_out_path = './Models/combined_ind_models'
 dep_data_full = pd.read_csv(dep_path, header=0, index_col=0)
 dep_data_genes = dep_data_full.columns.tolist()
-# filter out genes with no dependency data
-# target_genes_filt = [i for i in target_genes if i in dep_data_genes]
-# print(f'Number of target genes with dependency data: {len(target_genes_filt)}')
 exp_data = pd.read_csv(exp_path, header=0, index_col=0)
 exp_data_genes = exp_data.columns.tolist()
 
