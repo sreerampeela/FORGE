@@ -6,8 +6,8 @@ from scipy.stats import pearsonr, spearmanr, rankdata
 from numthreads import set_num_threads
 import datetime
 import gc
-from forge_ind_model_combined_optuna import *
-from forge_class_instance3 import *
+from IndFORGE import *
+from JointFORGE import *
 # set max number of threads to 4 for the code here
 set_num_threads(4)
 
