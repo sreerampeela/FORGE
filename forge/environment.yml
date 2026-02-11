@@ -1,0 +1,25 @@
+name: forge_env
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Core Python
+  - python=3.10.12
+  - pip
+
+  # Python scientific stack
+  - scipy=1.16.3
+  - scikit-learn=1.7.2
+  - scanpy=1.11.1
+
+  # R environment
+  - r-base=4.4.3
+  - r-limma=3.58.1
+
+  # (Optional but commonly required with ScanPy)
+  - anndata
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
