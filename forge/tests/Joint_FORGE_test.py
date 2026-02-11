@@ -10,11 +10,11 @@ import gc
 # set max number of threads to 4 for the code here
 set_num_threads(4)
 
-exp_path = "./Data/Exp.csv"
-dep_path = "./Data/Dep.csv"
-ic50_path = "./Data/Creammist_common_ic50.csv"
+exp_path = "./test_data/exp_test.csv"
+dep_path = "./test_data/dep_test.csv"
+ic50_path = "./test_data/ic50_test.csv"
 
-drug_target_data = pd.read_csv('./Data/Drug_target_data.csv',
+drug_target_data = pd.read_csv('./test_data/Drug_target_data.csv',
                                header=0, index_col=0)
 # drug_target_data.head()
 key_drugs = ['ERLOTINIB']
