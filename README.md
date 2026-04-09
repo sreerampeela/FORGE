@@ -28,6 +28,8 @@ Run the following command from the project root directory:
 
 ```bash
 conda env create -f environment.yml
+```
+
 
 ## Repository Structure
 
