@@ -18,6 +18,17 @@ of promising treatment groups for targeted therapy consideration.
 3. Pandas = 2.2.3
 4. Scikit-learn = 1.6.1
 
+#### Environment Setup
+
+To ensure reproducibility, we recommend creating the project environment using **Conda** (or a compatible package manager such as Mamba).
+
+##### Create the environment
+
+Run the following command from the project root directory:
+
+```bash
+conda env create -f environment.yml
+
 ## Repository Structure
 
 ### Core Model Implementation
