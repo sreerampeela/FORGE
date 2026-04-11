@@ -72,6 +72,7 @@ All analyses reported in the manuscript can be reproduced by:
 2. Instantiating the FORGE model using classes in `forge/src`
 3. Running the appropriate training and evaluation pipelines from the `tests` directory
 4. Generating figures using scripts in `figures_publication`
+5. Please note that if usung the pretrained models from FigShare, rename the model definitionfiles in /src to forge_class_instance3 (joint models), forge_class_instance5 (individual models).
 
 ---
 
